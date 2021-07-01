@@ -1,0 +1,41 @@
+<html xmlns:th="https://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: layout (~{::body})}">
+  <body>
+    <h1>Add a New Pet</h1>
+
+    <form action="/pets" method="POST" th:object="${petDummy}">
+      <div>
+        <label th:for="name">Name</label>
+        <input type="text" th:id="name" th:field="*{name}" th:value="*{name}"/>
+        <p th:errors="*{name}"></p>
+      </div>
+      <div>
+        <label th:for="species">Species</label>
+        <input type="text" th:id="species" th:field="*{species}" th:value="*{species}"/>
+        <p th:errors="*{species}"></p>
+      </div>
+      <div>
+        <label th:for="breed">Breed</label>
+        <input type="text" th:id="breed" th:field="*{breed}" th:value="*{breed}"/>
+        <p th:errors="*{breed}"></p>
+      </div>
+      <div>
+        <label th:for="age">Age</label>
+        <input type="number" th:id="age" th:field="*{age}" th:value="*{age}"/>
+        <p th:errors="*{age}"></p>
+      </div>
+      <div>
+        <p>Neutered:
+          <label th:for="yes">Yes
+            <input type="radio" th:id="yes" th:field="*{neutered}" value="true">
+          </label>
+          <label th:for="no">No
+            <input type="radio" th:id="no" th:field="*{neutered}" value="false">
+          </label>
+        </p>
+        <p th:errors="*{neutered}"></p>
+      </div>
+      <div><input type="submit" value="Add Pet" /></div>
+    </form>
+  </body>
+</html>
