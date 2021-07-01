@@ -1,4 +1,4 @@
-This assignment was testing the testing following learning objectives:
+This assignment was testing following learning objectives:
 
 ## Key Learning Objectives
 
